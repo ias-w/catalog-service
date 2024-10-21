@@ -34,3 +34,10 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+tasks.named("bootBuildImage") {
+    docker {
+        host = "unix:///run/user/1002/podman/podman.sock"
+        bindHostToBuilder = true
+    }
+}
