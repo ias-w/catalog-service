@@ -75,3 +75,26 @@ kubectl delete service catalog-service
 ## kubectl get deployment
 kubectl delete deployment catalog-service
 ```
+
+## Architecture of Polar Bookshop
+
+![Architecture of Polar Bookshop](./images/fig-2.14-architecture-Polar_Bookshop.png "qwe")
+
+```bash
+./gradlew bootJar
+```
+```bash
+java -jar build/libs/catalog-service-0.0.1-SNAPSHOT.jar
+```
+```bash
+# NOTE Another practical Gradle task is build, 
+# which combines the operations of the 
+# bootJar and test tasks.
+./gradlew build
+```
+```bash
+
+```
+```bash
+
+```
