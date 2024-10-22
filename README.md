@@ -68,3 +68,10 @@ kubectl port-forward service/catalog-service 8000:8080
 ```
 [see localhost:8000](http://localhost:8000/)
 
+```bash
+## kubectl get service
+kubectl delete service catalog-service
+
+## kubectl get deployment
+kubectl delete deployment catalog-service
+```
