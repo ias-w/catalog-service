@@ -10,6 +10,7 @@ For further reference, please consider the following sections:
 * [OCI image configuration for podman](https://docs.spring.io/spring-boot/gradle-plugin/packaging-oci-image.html#build-image.examples.docker.podman)
 * [Spring Web](https://docs.spring.io/spring-boot/docs/3.3.4/reference/htmlsingle/index.html#web)
 * [Validation](https://docs.spring.io/spring-boot/docs/3.3.4/reference/htmlsingle/index.html#io.validation)
+* [Spring Reactive Web](https://docs.spring.io/spring-boot/docs/3.3.4/reference/htmlsingle/index.html#web.reactive)
 
 ### Guides
 
@@ -19,6 +20,7 @@ The following guides illustrate how to use some features concretely:
 * [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
 * [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
 * [Validation](https://spring.io/guides/gs/validating-form-input/)
+* [Building a Reactive RESTful Web Service](https://spring.io/guides/gs/reactive-rest-service/)
 
 ### Additional Links
 
