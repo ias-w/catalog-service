@@ -13,6 +13,7 @@ For further reference, please consider the following sections:
 * [Spring Reactive Web](https://docs.spring.io/spring-boot/docs/3.3.4/reference/htmlsingle/index.html#web.reactive)
 * [Spring Configuration Processor](https://docs.spring.io/spring-boot/3.3.4/specification/configuration-metadata/annotation-processor.html)
 * [Config Client](https://docs.spring.io/spring-cloud-config/reference/client.html)
+* [Spring Boot Actuator](https://docs.spring.io/spring-boot/3.3.5/reference/actuator/index.html)
 
 ### Guides
 
@@ -23,6 +24,7 @@ The following guides illustrate how to use some features concretely:
 * [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
 * [Validation](https://spring.io/guides/gs/validating-form-input/)
 * [Building a Reactive RESTful Web Service](https://spring.io/guides/gs/reactive-rest-service/)
+* [Building a RESTful Web Service with Spring Boot Actuator](https://spring.io/guides/gs/actuator-service/)
 
 ### Additional Links
 

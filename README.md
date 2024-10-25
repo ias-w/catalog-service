@@ -105,5 +105,8 @@ java -jar build/libs/catalog-service-0.0.1-SNAPSHOT.jar \
     --spring.profiles.active=prod
 ```
 ```bash
+http POST :9001/actuator/refresh
+```
+```bash
 
 ```

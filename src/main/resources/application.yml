@@ -37,3 +37,9 @@ server:
       min-spare: 5
 polar:
   greeting: Welcome to the local book catalog!
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
+# Exposes the /actuator/refresh endpoint through HTTP
