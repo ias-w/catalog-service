@@ -6,6 +6,10 @@ plugins {
     id 'io.spring.dependency-management' version '1.1.6'
 }
 
+ext {
+    springCloudVersion = "2023.0.3"
+}
+
 group = 'dev.ilkersahin'
 version = '0.0.1-SNAPSHOT'
 
@@ -29,6 +33,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-configuration-processor'
+    implementation 'org.springframework.cloud:spring-cloud-starter-config'
     testImplementation 'org.springframework.boot:spring-boot-starter-webflux'
     testImplementation 'io.projectreactor:reactor-test'
     compileOnly 'org.projectlombok:lombok'
@@ -50,4 +55,10 @@ tasks.named("bootBuildImage") {
 
 bootRun {
     systemProperty 'spring.profiles.active', 'testdata'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
 }

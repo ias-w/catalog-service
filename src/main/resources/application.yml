@@ -3,6 +3,15 @@
 spring:
   application:
     name: catalog-service
+# The name of the application, used by the
+# config server to filter the configuration
+  config:
+    import: "optional:configserver:"
+# Imports configuration data from a config server when available
+  cloud:
+    config:
+      uri: http://localhost:8888
+# The URL of the configuration server
 server:
   port: 9001
   tomcat:

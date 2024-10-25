@@ -12,6 +12,7 @@ For further reference, please consider the following sections:
 * [Validation](https://docs.spring.io/spring-boot/docs/3.3.4/reference/htmlsingle/index.html#io.validation)
 * [Spring Reactive Web](https://docs.spring.io/spring-boot/docs/3.3.4/reference/htmlsingle/index.html#web.reactive)
 * [Spring Configuration Processor](https://docs.spring.io/spring-boot/3.3.4/specification/configuration-metadata/annotation-processor.html)
+* [Config Client](https://docs.spring.io/spring-cloud-config/reference/client.html)
 
 ### Guides
 

@@ -98,5 +98,12 @@ java -jar build/libs/catalog-service-0.0.1-SNAPSHOT.jar
 [see localhost:9001](http://localhost:9001/)
 
 ```bash
+http :9001/
+```
+```bash
+java -jar build/libs/catalog-service-0.0.1-SNAPSHOT.jar \
+    --spring.profiles.active=prod
+```
+```bash
 
 ```
