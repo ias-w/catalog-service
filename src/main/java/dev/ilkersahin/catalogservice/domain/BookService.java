@@ -1,6 +1,7 @@
 // 3.3.1.2 IMPLEMENTING THE USE CASES
 // 5.2.2 Defining persistent entities with Spring Data
 // 5.2.3 Enabling and configuring JDBC auditing
+// 5.4.3 Evolving a database with Flyway
 
 package dev.ilkersahin.catalogservice.domain;
 
@@ -44,6 +45,7 @@ public class BookService {
                             book.title(),
                             book.author(),
                             book.price(),
+                            book.publisher(),
                             existingBook.createdDate(),
                             existingBook.lastModifiedDate(),
                             existingBook.version()

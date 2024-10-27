@@ -2,6 +2,7 @@
 // 3.3.3 Data validation and error handling
 // 5.2.2 Defining persistent entities with Spring Data
 // 5.2.3 Enabling and configuring JDBC auditing
+// 5.4.3 Evolving a database with Flyway
 
 package dev.ilkersahin.catalogservice.domain;
 
@@ -37,6 +38,8 @@ public record Book(
         @Positive(message = "The book price must be greater than zero.")
         Double price,
 
+        String publisher,
+
         @CreatedDate
         Instant createdDate,
 
@@ -47,9 +50,13 @@ public record Book(
         int version
 ) {
     public static Book of(String isbn, String title, String author, Double price) {
+        return Book.of(isbn, title, author, price, null);
+    }
+
+    public static Book of(String isbn, String title, String author, Double price, String publisher) {
         return new Book(
                 null,
-                isbn, title, author, price,
+                isbn, title, author, price, publisher,
                 null, null, 0
         );
     }

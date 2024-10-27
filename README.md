@@ -159,21 +159,35 @@ docker rm -fv polar-postgres
 
 ```
 sudo dnf install httpie
+```
 
+```bash
 http POST :9001/books author="Lyra Silverstar" \
     title="Northern Lights" isbn="1234567891" price=9.90
+```
 
+```bash
 http POST :9001/books author="Syra Lilverstar" \
     title="Southern Lights" isbn="9234567891" price=999.90
+```
+
+```bash
 
 http GET :9001/books
+```
 
+```bash
 http :9001/books/1234567891
+```
 
+```bash
 http :9001/books/9234567891
 ```
 
 ```bash
 ./gradlew test --tests BookRepositoryJdbcTests
+```
+
+```bash
 ./gradlew test --tests CatalogServiceApplicationTests
 ```

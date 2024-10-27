@@ -1,6 +1,6 @@
--- catalog-service/src/main/resources/schema.sql
+-- catalog-service/src/main/resources/db/migration/.
+-- ./V1__Initial_schema.sql
 
-DROP TABLE IF EXISTS book;
 CREATE TABLE book
 (
     id                 BIGSERIAL PRIMARY KEY NOT NULL,
