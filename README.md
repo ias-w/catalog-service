@@ -110,3 +110,65 @@ http POST :9001/actuator/refresh
 ```bash
 
 ```
+
+## Chapter 5
+
+```bash
+cd ../config-service
+./gradlew bootRun
+```
+Remember to run the config-service before trying the catalog-service.
+
+```bash
+docker run -d \
+    --name polar-postgres \
+    -e POSTGRES_USER=user \
+    -e POSTGRES_PASSWORD=password \
+    -e POSTGRES_DB=polardb_catalog \
+    -p 5432:5432 \
+    postgres:14.4
+```
+
+```bash
+docker ps -a
+```
+
+```bash
+docker stop polar-postgres
+```
+
+```bash
+docker start polar-postgres
+```
+
+```bash
+docker ps
+```
+
+```bash
+docker rm -fv polar-postgres
+```
+
+```bash
+./gradlew test
+```
+
+```bash
+./gradlew bootRun
+```
+
+```
+sudo dnf install httpie
+
+http POST :9001/books author="Lyra Silverstar" \
+    title="Northern Lights" isbn="1234567891" price=9.90
+
+http POST :9001/books author="Syra Lilverstar" \
+    title="Southern Lights" isbn="9234567891" price=999.90
+
+http GET :9001/books
+
+http :9001/books/1234567891
+
+http :9001/books/9234567891
+```

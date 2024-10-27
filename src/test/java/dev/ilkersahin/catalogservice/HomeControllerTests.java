@@ -19,6 +19,6 @@ public class HomeControllerTests {
     public void shouldReturnHomePage() throws Exception {
         mockMvc.perform(get("/"))
                 .andExpect(status().isOk())
-                .andExpect(content().string("Welcome to the book catalog!"));
+                .andExpect(content().string("Welcome to the catalog from a fresh config server"));
     }
 }

@@ -14,6 +14,7 @@ For further reference, please consider the following sections:
 * [Spring Configuration Processor](https://docs.spring.io/spring-boot/3.3.4/specification/configuration-metadata/annotation-processor.html)
 * [Config Client](https://docs.spring.io/spring-cloud-config/reference/client.html)
 * [Spring Boot Actuator](https://docs.spring.io/spring-boot/3.3.5/reference/actuator/index.html)
+* [Spring Data JDBC](https://docs.spring.io/spring-boot/3.3.5/reference/data/sql.html#data.sql.jdbc)
 
 ### Guides
 
@@ -25,6 +26,7 @@ The following guides illustrate how to use some features concretely:
 * [Validation](https://spring.io/guides/gs/validating-form-input/)
 * [Building a Reactive RESTful Web Service](https://spring.io/guides/gs/reactive-rest-service/)
 * [Building a RESTful Web Service with Spring Boot Actuator](https://spring.io/guides/gs/actuator-service/)
+* [Using Spring Data JDBC](https://github.com/spring-projects/spring-data-examples/tree/master/jdbc/basics)
 
 ### Additional Links
 

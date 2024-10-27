@@ -1,4 +1,6 @@
 // 3.3.1.2 IMPLEMENTING THE USE CASES
+// 5.2.2 Defining persistent entities with Spring Data
+// 5.2.3 Enabling and configuring JDBC auditing
 
 package dev.ilkersahin.catalogservice.domain;
 
@@ -36,19 +38,19 @@ public class BookService {
     public ResponseEntity<Book> editBookDetails(String isbn, Book book) {
         return bookRepository.findByIsbn(isbn)
                 .map(existingBook -> {
-// When editing the book, all the Book fields can be updated
-// except the ISBN code, because it’s the entity identifier.
                     var bookToUpdate = new Book(
+                            existingBook.id(),
                             existingBook.isbn(),
                             book.title(),
                             book.author(),
-                            book.price()
+                            book.price(),
+                            existingBook.createdDate(),
+                            existingBook.lastModifiedDate(),
+                            existingBook.version()
                     );
                     return ResponseEntity.ok()
                             .body(bookRepository.save(bookToUpdate));
                 })
-// When changing the details for a book not in the catalog yet,
-// create a new book.
                 .orElseGet(() -> ResponseEntity
                         .status(HttpStatus.CREATED)
                         .body(addBookToCatalog(book))
