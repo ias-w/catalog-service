@@ -1,4 +1,5 @@
 // 3.4.2 Integration tests with @SpringBootTest
+// 5.3.3 Integration tests with @SpringBootTest and Testcontainers
 
 package dev.ilkersahin.catalogservice;
 
@@ -6,15 +7,13 @@ import dev.ilkersahin.catalogservice.domain.Book;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest(
-        webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
-// Loads a full Spring web application context and
-// a Servlet container listening on a random port.
-)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@ActiveProfiles("integration")
 class CatalogServiceApplicationTests {
     @Autowired
     private WebTestClient webTestClient;

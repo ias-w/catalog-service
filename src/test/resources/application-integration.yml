@@ -1,0 +1,5 @@
+# catalog-service/src/test/resources/application-integration.yml
+
+spring:
+  datasource:
+    url: jdbc:tc:postgresql:14.4:///

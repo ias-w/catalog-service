@@ -172,3 +172,8 @@ http :9001/books/1234567891
 
 http :9001/books/9234567891
 ```
+
+```bash
+./gradlew test --tests BookRepositoryJdbcTests
+./gradlew test --tests CatalogServiceApplicationTests
+```
