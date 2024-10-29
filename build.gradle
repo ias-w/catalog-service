@@ -56,9 +56,17 @@ tasks.named('test') {
 }
 
 tasks.named("bootBuildImage") {
+    imageName = "${project.name}"
+    environment = ["BP_JVM_VERSION" : "21.*"]
     docker {
 //        host = "unix:///run/user/1002/podman/podman.sock"
 //        bindHostToBuilder = true
+
+        publishRegistry {
+            username = project.findProperty("registryUsername")
+            password = project.findProperty("registryPassword")
+            url = project.findProperty("registryUrl")
+        }
     }
 }
 

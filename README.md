@@ -191,3 +191,85 @@ http :9001/books/9234567891
 ```bash
 ./gradlew test --tests CatalogServiceApplicationTests
 ```
+## Chapter 6
+
+```bash
+docker network create catalog-network
+```
+
+```bash
+docker run -d \
+    --name polar-postgres \
+    --net catalog-network \
+    -e POSTGRES_USER=user \
+    -e POSTGRES_PASSWORD=password \
+    -e POSTGRES_DB=polardb_catalog \
+    -p 5432:5432 \
+    postgres:14.4
+```
+
+```bash
+docker rm -fv polar-postgres
+```
+
+```bash
+docker run -d \
+    --name catalog-service \
+    --net catalog-network \
+    -p 9001:9001 \
+    -e SPRING_DATASOURCE_URL=jdbc:postgresql://polar-postgres:5432/polardb_catalog \
+    -e SPRING_PROFILES_ACTIVE=testdata \
+    catalog-service
+```
+```bash
+docker rm -fv catalog-service
+```
+
+```bash
+./gradlew bootBuildImage
+```
+
+```bash
+docker run \
+    --name catalog-service \
+    --net catalog-network \
+    -p 9001:9001 \
+    -e SPRING_DATASOURCE_URL=jdbc:postgresql://polar-postgres:5432/polardb_catalog \
+    -e SPRING_PROFILES_ACTIVE=testdata \
+    catalog-service
+```
+
+```bash
+docker rm -f catalog-service polar-postgres
+```
+
+```bash
+docker network rm catalog-network
+```
+
+```bash
+./gradlew bootBuildImage \
+    --imageName ghcr.io/ias-w/catalog-service \
+    --publishImage \
+    -PregistryUrl=ghcr.io \
+    -PregistryUsername=ias-w \
+    -PregistryToken=${CL_NATIVE_SPRING_GITHUB_TOKEN}
+```
+
+
+```bash
+docker login ghcr.io --username ias-w --password ${CL_NATIVE_SPRING_GITHUB_TOKEN}
+```
+
+```bash
+./gradlew bootBuildImage \
+    --imageName ghcr.io/ias-w/catalog-service
+```
+
+```bash
+docker push ghcr.io/ias-w/catalog-service:latest
+```
+
+```bash
+
+```
